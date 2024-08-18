@@ -1,0 +1,48 @@
+<%-include('../partials/head')-%>
+
+    <%-include('../partials/navbar')-%>
+
+        <div class="table_container_general">
+            <div>
+                <table id="datatable_usuarios" class="table table-striped align-middle table-row-dashed fs-6 gy-5">
+                    <thead>
+                        <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0 tamaño_letra ">
+                            <th>Nombre</th>
+                            <th>Lastname</th>
+                            <th>Email</th>
+                            <th>cellphone</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-600 fw-semibold tamaño_letra">
+                        
+                    </tbody>
+                </table>
+
+            </div>
+      
+
+            <div id="formulario_planilla_usuarios"> 
+            <!-- tengo este div aparte ya que es el contenedor donde siempre van a haber distintos datos de clientes segun que fila selecciono para editar , tengo que tener un lugar para decir donde poner esa informacion -->
+
+               
+                <%-include('../pages/formulario_usuarios',{data:[]})-%>
+
+            </div>
+
+      
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script type="text/javascript" src="./js/administracion_usuarios.js"></script>

@@ -1,0 +1,378 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('/img/fondo5.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+.header {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff6347;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.intro {
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.intro h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.intro p {
+    font-size: 1.2em;
+}
+
+.highlight {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    color: #fff;
+}
+
+.highlight-text {
+    flex: 1 1 50%;
+    padding: 20px;
+}
+
+.highlight-text h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.highlight-text p {
+    font-size: 1.2em;
+}
+
+.highlight-image {
+    flex: 1 1 50%;
+    padding: 20px;
+}
+
+.highlight-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.services {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.services h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.services ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.services li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(25% - 40px);
+    text-align: center;
+    margin: 10px;
+}
+
+.login {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 40px auto;
+}
+
+.login h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login label {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.login input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.login button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    background-color: #ff6347;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login button:hover {
+    background-color: #ff4500;
+}
+
+
+
+
+
+.main-content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+
+.table_container_general{
+    width: 100%;
+    display: flex;
+    margin-top: 100px;
+    justify-content: space-around;
+   
+}
+
+#datatable_usuarios_wrapper .page-item.active .page-link {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+/* Cambiar el color del texto del botón de paginación activo a blanco */
+#datatable_usuarios_wrapper .page-item.active .page-link {
+    color: #ffffff !important;
+}
+
+#datatable_usuarios_wrapper .page-item:focus .page-link,
+#datatable_usuarios_wrapper .page-item.active .page-link:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+
+#datatable_libros_wrapper .page-item.active .page-link {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+/* Cambiar el color del texto del botón de paginación activo a blanco */
+#datatable_libros_wrapper .page-item.active .page-link {
+    color: #ffffff !important;
+}
+
+#datatable_libros_wrapper .page-item:focus .page-link,
+#datatable_libros_wrapper .page-item.active .page-link:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+
+
+#datatable_categorias_wrapper .page-item.active .page-link {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+/* Cambiar el color del texto del botón de paginación activo a blanco */
+#datatable_categorias_wrapper .page-item.active .page-link {
+    color: #ffffff !important;
+}
+
+#datatable_categorias_wrapper .page-item:focus .page-link,
+#datatable_categorias_wrapper .page-item.active .page-link:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+
+#datatable_sucursales_wrapper .page-item.active .page-link {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+/* Cambiar el color del texto del botón de paginación activo a blanco */
+#datatable_sucursales_wrapper .page-item.active .page-link {
+    color: #ffffff !important;
+}
+
+#datatable_sucursales_wrapper .page-item:focus .page-link,
+#datatable_sucursales_wrapper .page-item.active .page-link:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+
+
+#datatable_stock_wrapper .page-item.active .page-link {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+/* Cambiar el color del texto del botón de paginación activo a blanco */
+#datatable_stock_wrapper .page-item.active .page-link {
+    color: #ffffff !important;
+}
+
+#datatable_stock_wrapper .page-item:focus .page-link,
+#datatable_stock_wrapper .page-item.active .page-link:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.ancho1{
+    width: 200px;
+    padding: 8px;
+}
+
+
+.ancho2{
+    width: 370px;
+    padding: 8px;
+}
+
+
+
+.subtitulo{
+    margin-left: 70px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.libros{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

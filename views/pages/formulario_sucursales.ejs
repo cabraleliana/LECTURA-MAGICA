@@ -1,0 +1,28 @@
+<form id="sucursales">
+
+    <div class="form-group px-0 d-flex justify-content-between align-items-center">
+        <label for="Descripcion" class="col-4">Sucursal</label>
+        <input type="text" name="sucursal" value="<%=data[0] ? data[0].sucursal : '' %>" class="form-control campo" id="sucursal"
+            placeholder="Sucusal">
+
+    </div>
+    <div class="form-group px-0 d-flex justify-content-center align-items-center">
+        <label for="precio" class="col-4">Direccion</label>
+        <input type="text" name="direccion" value="<%=data[0] ? data[0].direccion : '' %>" class="form-control campo" id="direccion"
+            placeholder="Direccion">
+    </div>
+    <div class="form-group px-0 d-flex justify-content-center align-items-center">
+        <label for="sexo" class="col-4">Ciudad</label>
+        <input type="text" name="ciudad" value="<%=data[0] ? data[0].ciudad : '' %>" class="form-control campo" id="ciudad"
+            placeholder="Ciudad">
+    </div>
+    
+    <div class="d-flex">
+        <button type="button" class="btn btn-secondary btn-block" onclick="limpiar_campos('.campo'); nueva_fila('#id_sucursal')">Nuevo</button>
+        <!-- limpiar campos limpia los valores de los input de la clase campo  y a su vez nuevo usuario le setea un valor 0 a un input oculto para que cuando demos guardar se sepa que es un nuevo usuario y que no es una modificacion -->
+        <button type="button" class="btn btn-secondary btn-block" onclick="guardar_sucursal()" >Guardar</button>
+        <!-- aca hacemos la logica de preguntar que valor tiene el input oculto , si es cero , entonces es POST y es el id del usuario entonces es un PUT -->
+        <input type="hidden" id="id_sucursal" value="<%=data[0] ? data[0].id : '0' %>">
+    </div>
+
+</form>

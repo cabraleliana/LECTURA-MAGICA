@@ -1,0 +1,22 @@
+<div>
+    <h2 class="subtitulo">DESTACADOS</h2>
+    <div class="libros">
+        <%data.forEach(book=>{%>
+            <div style="width: 12rem;">
+                <img src="./img/libroSelva.webp" class="card-img-top imagenes" alt="...">
+                <h5 class="letra-peliculas">
+                    <%=book.titulo%>
+                </h5>
+                <h5 class="letra-peliculas">
+                    <%=book.autor%>
+                </h5>
+                <h5 class="letra-peliculas">
+                    <%=book.precio%>
+                </h5>
+            </div>
+            <%})%>
+    </div>
+
+</div>
+
+<script src="../js/libros.js"></script>

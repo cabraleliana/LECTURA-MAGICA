@@ -1,0 +1,56 @@
+<form id="libros">
+
+    <div class="form-group px-0 d-flex justify-content-between align-items-center">
+        <label for="Descripcion" class="col-4">Titulo</label>
+        <input type="text" name="Descripcion" value="<%=data[0] ? data[0].titulo : '' %>" class="form-control campo" id="titulo"
+            placeholder="Titulo">
+
+    </div>
+    <div class="form-group px-0 d-flex justify-content-center align-items-center">
+        <label for="precio" class="col-4">Autor</label>
+        <input type="text" name="precio" value="<%=data[0] ? data[0].autor : '' %>" class="form-control campo" id="autor"
+            placeholder="Autor">
+    </div>
+    <div class="form-group px-0 d-flex justify-content-between align-items-center">
+        <label for="Descripcion" class="col-4">Categoria</label>
+            <select name="libro" id="categoria_pantalla_libros"  class="ancho1 campo"
+             data-valor="<%=data[0] ? data[0].id_categoria : '' %>" onchange="cargar_subcategorias_select_pantalla_libros_by_categoria()">
+                <option value="">
+                    Seleccione categoria
+                </option>
+            </select>
+    </div>
+    <div class="form-group px-0 d-flex justify-content-between align-items-center">
+        <label for="Descripcion" class="col-4">Subcategoria</label>
+            <select name="libro" id="subcategoria_pantalla_libros"  class="ancho1 campo"
+             data-valor="<%=data[0] ? data[0].id_subcategoria : '' %>">
+                <option value="">
+                    Seleccione subcategoria
+                </option>
+            </select>
+    </div>
+    <div class="form-group px-0 d-flex justify-content-center align-items-center">
+        <label for="sexo" class="col-4">Paginas</label>
+        <input type="text" name="precio" value="<%=data[0] ? data[0].cantidad_paginas : '' %>" class="form-control campo" id="paginas"
+            placeholder="Paginas">
+    </div>
+    <div class="form-group px-0 d-flex justify-content-center align-items-center">
+        <label for="sexo" class="col-4">Idioma</label>
+        <input type="text" name="precio" value="<%=data[0] ? data[0].idioma : '' %>" class="form-control campo" id="idioma"
+            placeholder="Idioma">
+    </div>
+    <div class="form-group px-0 d-flex justify-content-center align-items-center">
+        <label for="sexo" class="col-4">Estado</label>
+        <input type="text" name="precio" value="<%=data[0] ? data[0].estado : '' %>" class="form-control campo" id="estado"
+            placeholder="Estado">
+    </div>
+    
+    <div class="d-flex">
+        <button type="button" class="btn btn-secondary btn-block" onclick="limpiar_campos('.campo'); nueva_fila('#id_libro')">Nuevo</button>
+        <!-- limpiar campos limpia los valores de los input de la clase campo  y a su vez nuevo usuario le setea un valor 0 a un input oculto para que cuando demos guardar se sepa que es un nuevo usuario y que no es una modificacion -->
+        <button type="button" class="btn btn-secondary btn-block" onclick="guardar_libro()" >Guardar</button>
+        <!-- aca hacemos la logica de preguntar que valor tiene el input oculto , si es cero , entonces es POST y es el id del usuario entonces es un PUT -->
+        <input type="hidden" id="id_libro" value="<%=data[0] ? data[0].id : '0' %>">
+    </div>
+
+</form>

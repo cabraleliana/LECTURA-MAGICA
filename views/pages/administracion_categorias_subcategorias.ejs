@@ -1,0 +1,15 @@
+<%-include('../partials/head')-%>
+
+    <%-include('../partials/navbar')-%>
+
+    <div id="formulario_planilla_categorias_subcategorias"> 
+        <!-- tengo este div aparte ya que es el contenedor donde siempre van a haber distintos datos de clientes segun que fila selecciono para editar , tengo que tener un lugar para decir donde poner esa informacion -->
+
+           
+            <%-include('../pages/formulario_categorias_subcategorias',{data:[]})-%>
+
+        </div>
+
+
+
+        <script type="text/javascript" src="./js/administracion_categorias_subcategorias.js"></script>

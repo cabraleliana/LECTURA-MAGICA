@@ -1,0 +1,35 @@
+<%-include('../partials/head')-%>
+
+<body>
+   
+<%-include('../partials/navbar')-%>
+
+    <main class="main-content">
+        <section class="intro">
+            <h2>Bienvenidos a la Biblioteca Lectura Mágica</h2>
+            <p>Tu portal hacia un mundo de conocimiento y aventura. Explora nuestros recursos y disfruta de una experiencia de lectura mágica.</p>
+        </section>
+       
+    </main>
+
+
+    <div id="contenedor_libros_destacados">
+
+        <%-include('../pages/libros_destacados',{data:[]})-%>
+
+
+    </div>
+
+
+
+
+
+    <footer class="footer">
+        <p>&copy; 2024 Biblioteca Lectura Mágica. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+<script src="./js/login_register.js"></script>
+
+</html>

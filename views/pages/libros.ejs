@@ -1,0 +1,24 @@
+
+    <!-- Sección de Lista de Libros -->
+    <div class="row" id="bookList">
+        <div class="libros " data-category="Ficción" data-subcategory="Novela">
+            <%data.forEach(book=>{%>
+            <div class="card" style="width: 14rem;">
+                <img src="./img/libroSelva.webp" class="card-img-top" alt="Cien Años de Soledad">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%=book.titulo%>
+                    </h5>
+                    <p class="card-text">
+                        <%=book.precio%>
+                    </p>
+                </div>
+            </div>
+            <%})%>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="../js/catalogo.js"></script>

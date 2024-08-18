@@ -1,0 +1,43 @@
+
+<%-include('../partials/head')-%>
+
+    <%-include('../partials/navbar')-%>
+
+<body>
+
+
+    <div class="filter-container row mb-4">
+        <div class="col-md-4">
+            <label for="categoryFilter">Categoría:</label>
+            <select class="form-control" id="categoryFilter" onchange="onhchange_cargar_subcategorias_filtro()">
+                <option value="">Seleccione Categoria</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="subcategoryFilter">Subcategoría:</label>
+            <select class="form-control" id="subcategoryFilter" onchange="onhchange_cargar_libros_by_subcategoria()">
+                <option value="">Seleccione subactegoria</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="bookFilter">Libro:</label>
+            <input type="text" class="form-control" id="bookFilter" placeholder="Buscar por título..." onchange="onchange_cargar_libro_by_titulo()">
+        </div>
+    </div>
+
+
+    <div class="container" id="catalogo">
+
+        <h1 class="text-center my-4">Catálogo de Libros</h1>
+
+        <%-include('../pages/libros',{data:[]})-%>
+
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
