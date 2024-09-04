@@ -9,6 +9,8 @@
     padding: 20px;
     overflow-y: auto;
     transition: right 0.3s ease; /* Efecto de transición */
+    color:#000;
+    overflow: hidden;
 }
 
 #carrito.carrito-visible {
@@ -149,4 +151,100 @@ input[type="number"] {
     cursor: pointer;
     border-radius: 8px;
     text-align: center;
+}
+
+
+.step-active {
+    transform: translateX(0);
+    transition: transform 0.5s ease;
+}
+
+.step-exit {
+    transform: translateX(-100%);
+    display: none;
+}
+
+
+
+
+.modal-finalizar-compra {
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-finalizar-compra h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.close-button-finalizar-compra {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff5b5b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-button-finalizar-compra:hover {
+    background-color: #ff3838;
+}
+
+.form-group-finalizar-compra {
+    margin-bottom: 20px;
+}
+
+label.label-finalizar-compra {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+input.input-finalizar-compra, select.select-finalizar-compra {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+input.input-finalizar-compra:focus, select.select-finalizar-compra:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.button-container-finalizar-compra {
+    text-align: center;
+}
+
+button.button-finalizar-compra {
+    background-color: #858b86;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button.button-finalizar-compra:hover {
+    background-color:  #858b86;
 }

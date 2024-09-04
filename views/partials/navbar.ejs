@@ -21,23 +21,93 @@
     </nav>
 
 
-    <div id="carrito" class="carrito-hidden">
+    <div id="carrito" class="carrito-hidden d-flex justify-content-between">
 
-        <button type="button" onclick="ocultarCarrito()">
+        <button type="button" onclick="ocultarCarrito()" style="position: absolute;right:0;">
             <i class="fas fa-close"></i>
         </button>
-        <div id="contenido-carrito">
-            
-            
-        </div>
 
-        <div class="subtotal" id="subtotal">
-            <p>Total:</p>
-            <p>$201.950,00</p>
-        </div>
 
+        
+        <div id="contenido-carrito" class="step-active" style="margin-top: 40px;"></div>
+        <div id="forma_pago" class="step-exit">
+            <div class="mt-5 form-container">
+                <h2 class="text-center">Forma de Pago</h2>
+                <form>
+                  <!-- Tipo de Pago -->
+                  <div class="mb-3">
+                    <label for="paymentType" class="form-label">Seleccione una opción de pago:</label>
+                    <div>
+                        <select name="medio_pago" id="medio_pago" onchange="medioPago()">
+                            <option value="EFECTIVO">Efectivo</option>
+                            <option value="TARJETA">Tarjeta</option>
+                        </select>
+                    </div>
+                  </div>
+            
+                  <div id="cardFields" class="d-none">
+                    <div class="mb-3">
+                      <label for="cardNumber" class="form-label">Número de Tarjeta</label>
+                      <input type="text" class="form-control" id="numero_tarjeta" placeholder="1234 5678 9123 4567">
+                    </div>
+            
+                    <div class="mb-3">
+                      <label for="cardHolder" class="form-label">Titular de la Tarjeta</label>
+                      <input type="text" class="form-control" id="titular_tarjeta" placeholder="Nombre del Titular">
+                    </div>
+            
+                    <div class="row">
+                      <div class="col-6">
+                        <label for="expiryDate" class="form-label">Vencimiento</label>
+                        <div class="input-group">
+                          <input type="text" class="form-control" id="expiryMonth" placeholder="MM" maxlength="2">
+                          <span class="input-group-text">/</span>
+                          <input type="text" class="form-control" id="expiryYear" placeholder="YY" maxlength="2">
+                        </div>
+                      </div>
+            
+                      <div class="col-6">
+                        <label for="securityCode" class="form-label">CVV</label>
+                        <input type="text" class="form-control" id="securityCode" placeholder="123" maxlength="4">
+                      </div>
+                    </div>
+                  </div>
+            
+                  <!-- Botón Enviar -->
+                  <div class="mt-4">
+                    <div class="d-flex justify-content-between mt-4">
+                        <button type="button" class="btn btn-secondary" onclick="accionBotonCarrito('volver')">Volver</button>
+                        <button type="button" class="btn btn-primary" onclick="accionBotonCarrito('finalizar')">Finalizar</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
 
     </div>
+
+
+    <div id="seccion_finalizar_compra" class="modal-finalizar-compra step-exit">
+      <h2>Finalizar Compra</h2>
+      <form>
+          <div class="form-group-finalizar-compra">
+              <label for="email" class="label-finalizar-compra">Ingrese su correo electrónico</label>
+              <input type="email" id="correo" name="email" placeholder="ejemplo@correo.com" required class="input-finalizar-compra">
+          </div>
+
+          <div class="form-group-finalizar-compra">
+            <label for="sucursal" class="label-finalizar-compra">Elija la sucursal de retiro</label>
+            <select id="sucursal" name="sucursal" class="select-finalizar-compra" required>
+                <option value="">Seleccione una sucursal</option>
+            </select>
+        </div>
+
+        <h5>Disponible a partir <span id="fecha_de_entrega"></span></h5>
+        
+          <div class="button-container-finalizar-compra">
+              <button type="button" class="button-finalizar-compra" onclick="finalizar_compra()">Finalizar Compra</button>
+          </div>
+      </form>
+  </div>
 
 
 </header>

@@ -97,7 +97,7 @@ try {
         headers: {
             "Content-Type": "application/json",
         },
-    })
+    })//hacemos un delete de la realacion de categorias y subcategorias , para hacer un post despues 
 
 
 
@@ -132,7 +132,7 @@ try {
     })
 
     const results = await response.json();
-    console.log(results.data)
+    console.log(results.data)//aca recibo un array de ids
 
     // multiselect_desmarcar_todos('#subcategoria')
 

@@ -8,9 +8,11 @@
     <div class="product-image">
         <img src="/img/libroSelva.webp" id="imagen" alt="Pack Trilogía Caballo De Troya">
     </div>
-    <div class="product-details">
-        <h1 id="titulo">Pack Trilogía Caballo De Troya 1, 2 Y 3, De Jj Benítez</h1>
-        <p id="precio" class="price">$43.990,00 <span class="old-price">$49.990,00</span></p>
+    <div class="product-details" id="detalle_libro" data-id="<%= data.id %>">
+        <h1 id="titulo"><%= data.titulo %></h1>
+        <h5 id="autor">Autor: <%= data.autor %></h5>
+        <h5 id="idioma">Idioma: <%= data.idioma %></h5>
+        <p id="precio" class="price" data-valor="<%= data.precio %>">$<%= data.precio_formateado %></p>
         <div class="quantity">
             <button onclick="decrement()">-</button>
             <input type="number" id="quantity" value="1" min="1">

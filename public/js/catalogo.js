@@ -15,35 +15,19 @@ const todos_libros = async (id) => {
 todos_libros()
 
 
-const cargar_libros_filtrados = async (id_categoria,id_subcategoria,titulo) => {
+const cargar_libros_filtrados = async () => {
     
     try {
-        if(id_subcategoria==0){
-            
-            let url = `http://localhost:3090/books/libros_by_categoria/${id_categoria}`;
-            let response = await fetch(url);
-            let data = await response.text();
-            console.log(data)
-            document.getElementById('catalogo').innerHTML=data
 
-        }else if(id_subcategoria!=0 && id_categoria!=0 && titulo==''){
-
-            let url = `http://localhost:3090/books/libros_by_categoria_subcategoria?id_categoria=${id_categoria}&id_subcategoria=${id_subcategoria}`;
-            let response = await fetch(url);
-            let data = await response.text();
-            console.log(data)
-            document.getElementById('catalogo').innerHTML=data
-
-
-        }else{
-
-            let url = `http://localhost:3090/books/libros_by_categoria_subcategoria_titulo?id_categoria=${id_categoria}&id_subcategoria=${id_subcategoria}&titulo=${titulo}`;
-            let response = await fetch(url);
-            let data = await response.text();
-            console.log(data)
-            document.getElementById('catalogo').innerHTML=data
-
-        }
+        let id_categoria = categoryFilter.value
+        let id_subcategoria = subcategoryFilter.value
+        let titulo = bookFilter.value
+    
+        let url = `http://localhost:3090/books/libros_filtrados?id_categoria=${id_categoria}&id_subcategoria=${id_subcategoria}&titulo=${titulo}`;
+        let response = await fetch(url);
+        let data = await response.text();
+        console.log(data)
+        document.getElementById('catalogo').innerHTML=data        
 
     } catch (error) {
         console.log(error);
@@ -89,13 +73,15 @@ const onhchange_cargar_subcategorias_filtro = async () => {
 
 
         $(`#subcategoryFilter`).html(data)
-        //este pisa todo el tiempo la info del select , ya que al cambiar todo el tiempo  , queda la info de la sucursal anterior
-        $(`#subcategoryFilter`).prepend("<option value=''>Seleccione subcategoria</option>");
+        //este pisa todo el tiempo la info del select , ya que al cambiar todo el tiempo  , queda la info de la subcategoria anterior
+        $(`#subcategoryFilter`).prepend("<option value='' selected>Seleccione subcategoria</option>");
+        //la propiedad selected se asegura que el seleccione quede marcado
         //lo puse despues del insert porque sino se pisa con el html
-        $(`#subcategoryFilter`).val($(`#subcategoryFilter`).attr('data-valor'))
-        //selecciona el atributo que tengo en data valor y me marca la pelicula que corresponda
+        // $(`#subcategoryFilter`).val($(`#subcategoryFilter`).attr('data-valor')) 
+        //esta linea solo sirve cuando tengo un editar , es decir , al seleccionar una fila con ese id lo lleno en el front
+        //selecciona el atributo que tengo en data valor y me marca la subcategoria que corresponda
 
-        cargar_libros_filtrados(id_categoria,0,'')
+        cargar_libros_filtrados()
 
 
     } catch (error) {
@@ -108,10 +94,7 @@ const onhchange_cargar_subcategorias_filtro = async () => {
 
 const onhchange_cargar_libros_by_subcategoria = async () => {
 
-    let id_categoria = categoryFilter.value
-    let id_subcategoria = subcategoryFilter.value
-
-   cargar_libros_filtrados(id_categoria,id_subcategoria,'')
+   cargar_libros_filtrados()
 
 }
 
@@ -120,20 +103,8 @@ const onhchange_cargar_libros_by_subcategoria = async () => {
 
 const onchange_cargar_libro_by_titulo = async () => {
 
-    let id_categoria = categoryFilter.value
-    let id_subcategoria = subcategoryFilter.value
-    let titulo = bookFilter.value
 
-
-    if(id_categoria!=0 && id_subcategoria!=0){
-
-            cargar_libros_filtrados(id_categoria,id_subcategoria,titulo)
-    }
-
-        cargar_libros_by_titulo(titulo)
-    
-        todos_libros()
-
+    cargar_libros_filtrados()
 
 
 }
@@ -160,3 +131,9 @@ const cargar_libros_by_titulo = async (titulo) => {
 
 
 cargar_categorias_filtro()
+
+const ver_detalle_libro =  (id) => {
+    
+    location.href=`http://localhost:3090/books/detalle_libro/${id}`
+
+}

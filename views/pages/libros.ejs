@@ -3,7 +3,7 @@
     <div class="row" id="bookList">
         <div class="libros " data-category="Ficción" data-subcategory="Novela">
             <%data.forEach(book=>{%>
-            <div class="card" style="width: 14rem;">
+            <div class="card cursor-pointer" style="width: 14rem;" onclick="ver_detalle_libro(<%=book.id%>)">
                 <img src="./img/libroSelva.webp" class="card-img-top" alt="Cien Años de Soledad">
                 <div class="card-body">
                     <h5 class="card-title">

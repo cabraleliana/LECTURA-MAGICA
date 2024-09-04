@@ -6,6 +6,8 @@ const categories=require('./categories')
 const sucursales=require('./sucursales')
 const stock=require('./stock')
 const subcategories=require('./subcategorias')
+const compras=require('./compras')
+
 
 
 
@@ -19,6 +21,7 @@ module.exports = (app)=>{
     sucursales(app)
     stock(app)
     subcategories(app)
+    compras(app)
 
     //cuando iniciamos el servidor ejecutamos estas funciones que habilitan el uso de sus respectivas rutas
 }

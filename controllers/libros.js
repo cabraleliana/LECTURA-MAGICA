@@ -9,12 +9,13 @@ const caso_detalle_libro = require("../cases/libros/detalle_libro.js")
 const caso_libros_catalogo = require("../cases/libros/todosLibrosCatalogo.js")
 const caso_libros_by_categoria = require("../cases/libros/librosByCategoria.js")
 const caso_libros_by_categoria_subcategoria= require("../cases/libros/librosByCategoriaSubcategoria.js")
-const caso_libros_by_titulo= require("../cases/libros/librosByTituloFiltro.js")
+const caso_libros_filtrados= require("../cases/libros/librosFiltrados.js")
+const librosFiltrados = require("../cases/libros/librosFiltrados.js")
 
-const libros_by_titulo = async (req, res) => {
+const libros_filtrados= async (req, res) => {
     try {
         
-       let result = await caso_libros_by_titulo(req);
+       let result = await caso_libros_filtrados(req);
 
        
 
@@ -31,45 +32,6 @@ const libros_by_titulo = async (req, res) => {
     }
 }
 
-
-const libros_by_categoria_subcategoria = async (req, res) => {
-    try {
-        
-       let result = await caso_libros_by_categoria_subcategoria(req);
-
-       
-
-       console.log(result)
-
-       res.render('./pages/libros.ejs', {data: result})
-
-       
-
-
-    } catch (error) {
-        console.log(error)
-        res.status(500).json({ status: -1, message: 'Se produjo error interno' })
-    }
-}
-
-
-const libros_by_categoria = async (req, res) => {
-    try {
-        
-       let result = await caso_libros_by_categoria(req);
-
-       console.log(result)
-
-       res.render('./pages/libros.ejs', {data: result})
-
-       
-
-
-    } catch (error) {
-        console.log(error)
-        res.status(500).json({ status: -1, message: 'Se produjo error interno' })
-    }
-}
 
 
 const librosCatalogo = async (req, res) => {
@@ -211,7 +173,7 @@ const detalle_libro = async (req, res) => {
 
        console.log(result)
 
-       res.render('./pages/detalle_libro.ejs', {data: result})
+       res.render('./pages/detalle_libro.ejs', {data: result[0]})
 
     } catch (error) {
         console.log(error)
@@ -229,7 +191,5 @@ module.exports = {
    librosDestacados,
    detalle_libro,
    librosCatalogo,
-   libros_by_categoria,
-   libros_by_categoria_subcategoria,
-   libros_by_titulo
+   libros_filtrados
 };

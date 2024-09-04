@@ -22,11 +22,7 @@ router.get('/detalle_libro/:id', books.detalle_libro)
 
 router.get('/todos_libros_catalogo', books.librosCatalogo)
 
-router.get('/libros_by_categoria/:id_categoria', books.libros_by_categoria)
-
-router.get('/libros_by_categoria_subcategoria', books.libros_by_categoria_subcategoria)
-
-router.get('/libros_by_titulo/:titulo', books.libros_by_titulo)
+router.get('/libros_filtrados', books.libros_filtrados)
 
 
 

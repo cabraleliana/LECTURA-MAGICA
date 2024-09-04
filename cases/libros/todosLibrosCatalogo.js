@@ -3,7 +3,7 @@ const config = require('../../config/config').config
 
 module.exports = async function todos_libros_catalogo(req){
     try {
-        const query = `SELECT titulo,precio
+        const query = `SELECT id,titulo,precio
         FROM books`
         const db = new Sql(config)
         const results = await db.ejecutar(query)
